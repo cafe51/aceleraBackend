@@ -1,9 +1,11 @@
 FROM node:16-alpine
 
-WORKDIR /app
+WORKDIR /app/back
 
-COPY package*.json /app
+COPY package*.json .
 
-COPY . .
+# COPY . .
 
 RUN npm install --silent
+
+COPY . .
