@@ -11,10 +11,10 @@ const conn = mysql.createPool({
 	port: Number(process.env.MYSQLPORT || 3306)
 });
 
-if (['dev', 'development'].includes(process.env.NODE_ENV || 'development')) {
-	const dropDatabase = readQueries('dropDatabase.sql');
-	const createDatabase = readQueries('createDatabase.sql');
-	executeQueries(conn, dropDatabase).then(() => executeQueries(conn, createDatabase));
-}
+// if (['dev', 'development'].includes(process.env.NODE_ENV || 'development')) {
+const dropDatabase = readQueries('dropDatabase.sql');
+const createDatabase = readQueries('createDatabase.sql');
+executeQueries(conn, dropDatabase).then(() => executeQueries(conn, createDatabase));
+// }
 
 export default conn;
