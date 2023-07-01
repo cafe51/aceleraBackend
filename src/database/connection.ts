@@ -15,6 +15,6 @@ const conn = mysql.createPool({
 const dropDatabase = readQueries('dropDatabase.sql');
 const createDatabase = readQueries('createDatabase.sql');
 executeQueries(conn, dropDatabase).then(() => executeQueries(conn, createDatabase));
-// }
+// } 
 
 export default conn;
